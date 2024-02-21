@@ -37,3 +37,6 @@ WHERE NOT IN (
 
 ## DE concepts
 - parametrised execution
+
+## Project tips
+- Run the dbt build via API, that can be called when exporting data in mage
