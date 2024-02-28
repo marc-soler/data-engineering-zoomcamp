@@ -40,3 +40,7 @@ WHERE NOT IN (
 
 ## Project tips
 - Run the dbt build via API, that can be called when exporting data in mage
+
+## Pyspark
+- When reading a csv, the schema is inferred from the data, but it can be specified
+- When writing a parquet, the schema is inferred from the data, but it can be specified
