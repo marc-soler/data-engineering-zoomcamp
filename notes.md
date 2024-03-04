@@ -41,6 +41,14 @@ WHERE NOT IN (
 ## Project tips
 - Run the dbt build via API, that can be called when exporting data in mage
 
-## Pyspark
+## Spark and Pyspark
 - When reading a csv, the schema is inferred from the data, but it can be specified
 - When writing a parquet, the schema is inferred from the data, but it can be specified
+- Transformations are not executed right away (lazy), but when an action is called (eager)
+  - Transformations are things like select, filter, groupBy, join
+  - Actions are things like show, collect, count, write
+- Spark submit
+
+## GCloud
+- Upload files to GCS from terminal: gsutil -m cp -r <folder> gs://<bucket-name>
+  - -m enables multithreading in case large file, -r for recursive, because nested folders

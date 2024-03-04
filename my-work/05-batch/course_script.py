@@ -62,3 +62,30 @@ df = df.repartition(24)
 df.write.parquet("data/fhv/2021/01", mode="overwrite")
 
 # %%
+df = spark.read.parquet("data/fhv/2021/01")
+
+# %%
+df.printSchema()
+
+# %%
+df.select("dispatching_base_num").filter(df.dispatching_base_num == "B02975").show()
+
+# %%
+# Spark native functions
+from pyspark.sql import functions as F
+
+df = df.withColumn("pickup_date", F.to_date("pickup_datetime"))
+df = df.withColumn("pickup_hour", F.hour("pickup_datetime"))
+df = df.withColumn("dropoff_date", F.to_date("dropoff_datetime"))
+df = df.withColumn("dropoff_hour", F.hour("dropoff_datetime"))
+
+
+# %%
+# User defined functions
+def custom_function(x):
+    return 0
+
+
+custom_function = F.udf(custom_function, returnType=StringType())
+
+df = df.withColumn("pickup_date_udf", custom_function(df.pickup_datetime))
