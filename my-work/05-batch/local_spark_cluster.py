@@ -13,3 +13,4 @@ df = spark.read.parquet("data/fhv/2021/01")
 # %%
 df.show()
 # %%
+df
