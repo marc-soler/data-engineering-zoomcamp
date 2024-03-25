@@ -5,9 +5,7 @@ from pyspark.conf import SparkConf
 from pyspark.context import SparkContext
 
 # %%
-credentials_location = (
-    "/Users/msoler/Repos/data-engineering-zoomcamp/google_credentials.json"
-)
+credentials_location = "/Users/msoler/.google/google_credentials.json"
 conf = (
     SparkConf()
     .setMaster("local[*]")
@@ -31,9 +29,7 @@ hadoop_conf.set(
     "fs.AbstractFileSystem.gs.impl", "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS"
 )
 hadoop_conf.set("fs.gs.impl", "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem")
-hadoop_conf.set(
-    "fs.gs.auth.service.account.json.keyfile", "path/to/google_credentials.json"
-)
+hadoop_conf.set("fs.gs.auth.service.account.json.keyfile", credentials_location)
 hadoop_conf.set("fs.gs.auth.service.account.enable", "true")
 
 # %%

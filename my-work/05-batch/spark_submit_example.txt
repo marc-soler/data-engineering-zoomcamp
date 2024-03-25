@@ -1,0 +1,7 @@
+poetry run python local_spark_cluster.py
+
+URL="spark://Marcs-MacBook-Pro-2.local:7077"
+
+spark-submit \
+    --master="${URL}" \
+    local_spark_cluster.py 

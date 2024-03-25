@@ -48,6 +48,10 @@ WHERE NOT IN (
   - Transformations are things like select, filter, groupBy, join
   - Actions are things like show, collect, count, write
 - Spark submit
+- Running a standalone cluster locally:
+  - To start a local cluster in standalone mode, go to SPARK_HOME and execute ./sbin/start-master.sh
+  - spark://localhost:7077 when creating the spark object
+  - To create workers, 
 
 ## GCloud
 - Upload files to GCS from terminal: gsutil -m cp -r <folder> gs://<bucket-name>
