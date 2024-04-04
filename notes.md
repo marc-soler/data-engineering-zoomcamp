@@ -56,3 +56,7 @@ WHERE NOT IN (
 ## GCloud
 - Upload files to GCS from terminal: gsutil -m cp -r <folder> gs://<bucket-name>
   - -m enables multithreading in case large file, -r for recursive, because nested folders
+
+## Kafka & Data Streaming
+- 
+
