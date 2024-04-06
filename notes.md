@@ -9,6 +9,7 @@
 ## Python
 - argparse library allows to add arguments in the terminal when running a python script
 - python -m http.server to tart a server on a port, and interact with the directory you're in
+- Using itertuples when iterating over the records is more efficient compared to iterrows
 
 ## Docker
 - when creating multiple containers in docker-compose, they become part of the same network automatically
